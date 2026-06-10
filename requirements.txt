@@ -1,0 +1,8 @@
+streamlit
+folium
+streamlit-folium
+plotly
+pandas
+numpy
+scikit-learn
+geopy
