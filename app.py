@@ -74,7 +74,7 @@ with st.sidebar:
     st.markdown("Informatika 23")
     st.markdown("---")
     st.markdown("**🤖 Model:** U2-Net via `rembg`")
-    st.markdown("** Stack:** Python · Streamlit · PIL")
+    st.markdown(" Stack: Python · Streamlit · PIL")
 
 # ── BERANDA ──
 if page == "🏠  Beranda":
@@ -128,9 +128,9 @@ elif page == "🖼️  Hapus Background":
             st.markdown("#### 📷 Gambar Asli")
             st.image(input_image, use_column_width=True)
             st.markdown(f"""<div class="info-box">
-                📄 <b>Nama file:</b> {uploaded_file.name}<br>
-                📐 <b>Resolusi:</b> {input_image.width} × {input_image.height} px<br>
-                🎨 <b>Mode warna:</b> {input_image.mode}
+                 <b>Nama file:</b> {uploaded_file.name}<br>
+                 <b>Resolusi:</b> {input_image.width} × {input_image.height} px<br>
+                 <b>Mode warna:</b> {input_image.mode}
             </div>""", unsafe_allow_html=True)
         with col2:
             st.markdown("#### ✨ Hasil Deteksi")
@@ -158,9 +158,9 @@ elif page == "🖼️  Hapus Background":
                 placeholder.image(output_image, use_column_width=True)
                 st.markdown(f"""<div class="result-box">
                     ✅ <b>Background berhasil dihapus!</b><br>
-                    ⏱️ <b>Waktu inferensi:</b> {elapsed} detik<br>
-                    📦 <b>Format output:</b> PNG transparan<br>
-                    🎯 <b>Model:</b> U2-Net via rembg
+                     <b>Waktu inferensi:</b> {elapsed} detik<br>
+                     <b>Format output:</b> PNG transparan<br>
+                     <b>Model:</b> U2-Net via rembg
                 </div>""", unsafe_allow_html=True)
 
             buf = io.BytesIO()
