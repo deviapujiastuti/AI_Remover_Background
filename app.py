@@ -74,7 +74,7 @@ with st.sidebar:
     st.markdown("Informatika 23")
     st.markdown("---")
     st.markdown("**🤖 Model:** U2-Net via `rembg`")
-    st.markdown(" Stack: Python · Streamlit · PIL")
+    st.markdown("**🔧 Stack:** Python · Streamlit · PIL")
 
 # ── BERANDA ──
 if page == "🏠  Beranda":
