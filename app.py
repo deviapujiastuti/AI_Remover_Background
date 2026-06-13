@@ -64,7 +64,7 @@ if "total_time" not in st.session_state:
     st.session_state.total_time = 0.0
 
 with st.sidebar:
-    st.markdown("## ✂️ BG Remover")
+    st.markdown("## ✂️ Background Remover")
     st.markdown("---")
     page = st.radio("Navigasi", ["🏠  Beranda", "🖼️  Hapus Background", "📊  Dashboard"], label_visibility="collapsed")
     st.markdown("---")
@@ -74,7 +74,7 @@ with st.sidebar:
     st.markdown("Informatika 23")
     st.markdown("---")
     st.markdown("**🤖 Model:** U2-Net via `rembg`")
-    st.markdown("**🔧 Stack:** Python · Streamlit · PIL")
+    st.markdown("** Stack:** Python · Streamlit · PIL")
 
 # ── BERANDA ──
 if page == "🏠  Beranda":
