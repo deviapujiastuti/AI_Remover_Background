@@ -205,12 +205,12 @@ else:
     [data-testid="stFileUploadDropzone"] {{ border: 2px dashed {text_muted} !important; border-radius: 20px !important; background: {dropzone_bg} !important; }}
     [data-testid="stFileUploadDropzone"]:hover {{ border-color: #7F00FF !important; }}
     
-    /* Responsif Tambahan untuk HP */
-    @media (max-width: 768px) {
-        .hero h1 { font-size: 2rem; }
-        .hero p { font-size: 0.95rem; }
-        .metric-card .value { font-size: 1.8rem; }
-    }
+    /* Responsif Tambahan untuk HP - PERHATIKAN KURUNG KURAWAL GANDA */
+    @media (max-width: 768px) {{
+        .hero h1 {{ font-size: 2rem; }}
+        .hero p {{ font-size: 0.95rem; }}
+        .metric-card .value {{ font-size: 1.8rem; }}
+    }}
     </style>
     """, unsafe_allow_html=True)
 
