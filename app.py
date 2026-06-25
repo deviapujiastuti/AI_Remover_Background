@@ -28,8 +28,9 @@ if not st.session_state.welcomed:
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
     
-    #MainMenu, footer, header { visibility: hidden; }
-    [data-testid="stSidebar"] { display: none !important; } /* Sembunyikan sidebar di splash screen */
+    /* Sembunyikan semuanya KHUSUS di layar Splash Screen */
+    #MainMenu, footer, header { visibility: hidden !important; }
+    [data-testid="stSidebar"] { display: none !important; } 
     
     .stApp {
         background-color: #0b1437;
@@ -66,6 +67,12 @@ if not st.session_state.welcomed:
         20% { opacity: 1; transform: scale(1); }
         80% { opacity: 1; transform: scale(1); }
         100% { opacity: 0; transform: scale(1.05); }
+    }
+    
+    /* Responsif untuk HP di layar splash */
+    @media (max-width: 768px) {
+        .splash-title { font-size: 2.5rem; }
+        .splash-subtitle { font-size: 1rem; }
     }
     </style>
     
@@ -105,6 +112,7 @@ else:
         box_bg = "#ffffff"
         dropzone_bg = "rgba(255, 255, 255, 0.6)"
         highlight = "#F4EEFF"
+        burger_color = "#1b254b"
     else:
         bg_app = "#0b1437"
         text_main = "#ffffff"
@@ -116,6 +124,7 @@ else:
         box_bg = "#111c44"
         dropzone_bg = "rgba(17, 28, 68, 0.8)"
         highlight = "rgba(127, 0, 255, 0.2)"
+        burger_color = "#ffffff"
 
     # ==================== ADVANCED DYNAMIC STYLING ====================
     st.markdown(f"""
@@ -127,14 +136,21 @@ else:
     .stApp {{ background-color: {bg_app} !important; }}
     .text-main, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4, p, span, div {{ color: {text_main}; }}
     .text-muted {{ color: {text_muted} !important; }}
-    #MainMenu, footer, header {{ visibility: hidden; }}
-    .block-container {{ padding-top: 2rem !important; }}
+    
+    /* PERBAIKAN UNTUK HP: Biarkan header tetap ada agar menu burger muncul, tapi buat transparan */
+    #MainMenu, footer {{ visibility: hidden; }}
+    header {{ background-color: transparent !important; }}
+    /* Mewarnai icon burger sesuai tema */
+    button[kind="header"] * {{ color: {burger_color} !important; }}
+    
+    .block-container {{ padding-top: 1rem !important; }}
 
     /* Hero */
     .hero {{
         background: linear-gradient(135deg, #7F00FF 0%, #E100FF 100%);
         border-radius: 24px; padding: 3rem 2rem; text-align: center; margin-bottom: 2rem;
         position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(127, 0, 255, 0.2);
+        margin-top: 2rem; /* Jarak tambahan dari header HP */
     }}
     .hero h1, .hero p {{ color: white !important; position: relative; z-index: 1; }}
     .hero h1 {{ font-size: 3rem; font-weight: 800; margin: 0; letter-spacing: -0.02em; }}
@@ -188,6 +204,13 @@ else:
     /* File Uploader */
     [data-testid="stFileUploadDropzone"] {{ border: 2px dashed {text_muted} !important; border-radius: 20px !important; background: {dropzone_bg} !important; }}
     [data-testid="stFileUploadDropzone"]:hover {{ border-color: #7F00FF !important; }}
+    
+    /* Responsif Tambahan untuk HP */
+    @media (max-width: 768px) {
+        .hero h1 { font-size: 2rem; }
+        .hero p { font-size: 0.95rem; }
+        .metric-card .value { font-size: 1.8rem; }
+    }
     </style>
     """, unsafe_allow_html=True)
 
